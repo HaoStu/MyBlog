@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内容页-文章</title>
+    <link rel="stylesheet" href="plugin/layui/css/layui.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="plugin/prism/prism.css"><!--代码高亮工具-->
+</head>
+<body>
+    <header>
+        <div class="layui-row header-bigimg"></div>
+        <div class="layui-row subject-color nav-row">
+            <div class="main-content nav-menu">
+                <div class="layui-row">
+                    <div class="layui-col-md2 logo-box">
+                        <a href="#" title="首页，聚繁分享">
+                            <img src="imgs/canreplace/logo.png" alt="logo">
+                        </a>
+                    </div>
+                    <div class="layui-col-md7 menu-box">
+                        <ul class="menu-ul">
+                           <a href="index.html">
+                               <li>首页</li>
+                           </a>
+                            <a href="columntype.html">
+                                <li>技术文章</li>
+                            </a>
+                            <a href="sharetools.html">
+                                <li>工具分享</li>
+                            </a>
+                            <a href="aboutme.html">
+                                <li>关于我、关于博客</li>
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="layui-col-md3 search-box">
+                        <div class="search-input-div">
+                            <div class="layui-row">
+                                <div class="layui-col-md10 input-box">
+                                    <input class="search-input" placeholder="请输入关键字进行搜索">
+                                </div>
+                                <div class="layui-col-md2 search-btn-box">
+                                    <img src="imgs/icon/search.png" height="36" width="36"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main-content item-box">
+        <div class="item-type">
+            <div class="column-item layui-row">
+                <div class="column-item-title layui-row subject-second-color font-color1 font-bold">同类热门文章</div>
+                <div class="jianjie-p layui-row">
+                    <ul class="remen-ul">
+                        <li>
+                        <div class="remen-title layui-row">
+                            <a href="content2.html">MongoDB数据库</a>
+                        </div>
+                        <div class="remen-readnum layui-row">阅读：1</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="item-list">
+            <div class="article-content-box layui-row">
+                <h1>MongoDB数据库</h1>
+                <div class="article-param layui-row">
+                    2020-07-06 23:09<span><a href="#">好好</a></span><span>阅读数：1</span><span>评论数：0</span>&nbsp;&nbsp;
+                    <span class="hz-span layui-badge layui-bg-gray">数据库</span>
+                </div>
+                <article>
+                    <p>在工作的时候，总是会因为各种事情而感觉烦躁，尤其是项目开发的时候，感觉没有什么激情，
+                        甚至有的时候觉得有点厌烦了！</p>
+                    <p>有这样的情况我也不清楚是为什么，但是就是无意中就会进入这种状态，但是还好，我及时意识到了这种情况，
+                        非常的负面，所以就有了这篇文章。</p>
+                    <p>当觉得工作厌烦的时候，我会想想刚开始学编程的时候，那时候还不是什么多么难的技术，
+                        就一个HTML模仿制作一个网页而已，由于当时对于HTML标签的运用还不熟悉，老师随便布置个作业，
+                        让模仿制作一个网页页面，都会通宵去做这个事情，真的，第一次模仿HTML网页，我做到了凌晨4点。</p>
+                    <p>这样的激情，现在已经完全没有了，而且现在不要说HTML代码，就是Java代码、Android开发在工作中基本已经运用得很熟练了，
+                        所以已经没有初学编程时的激情了，可能也是因为重复编写高频率出现的代码而厌倦了。</p>
+                    <p>初学编程的时候是因为新知识，自己好奇、感兴趣。所以会那么用心的去做，并且还精神非常集中，那么现在我能怎么办呢？
+                        经过我的反思，我觉得我要继续学习新知识、新的技术，或者去研究下之前技术的底层原理，
+                        既是给自己的学习生涯的进阶规划，也是为了不让自己无聊，不让自己厌烦现在的工作内容，两全其美。</p>
+                    <p>编程的路上还很远，沿途的风景还有很多，需要坚持不懈！加油！</p>
+                </article>
+            </div>
+        </div>
+    </div>
+<script src="plugin/layui/layui.js"></script>
+<script src="plugin/jquery/jquery-3.3.1.min.js"></script>
+<script src="plugin/prism/prism.js"></script><!--代码高亮工具-->
+<script>
+    //然后在需要的位置调用如下方法
+    Prism.highlightAll();
+    $('pre').addClass("line-numbers").css("white-space", "pre-wrap");//显示行号
+    layui.use('laypage', function(){
+        var laypage = layui.laypage;
+
+        //执行一个laypage实例
+        laypage.render({
+            elem: 'pageItem', //注意，这里的 test1 是 ID，不用加 # 号
+            count: 50, //数据总数，从服务端得到
+            jump: function(obj, first){
+                //obj包含了当前分页的所有参数，比如：
+                console.log('当前页数：'+obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+                console.log('每页数量：'+obj.limit); //得到每页显示的条数
+                //首次不执行
+                if(!first){
+                   console.log('执行')
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>
